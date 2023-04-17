@@ -1,4 +1,26 @@
 <script setup>
+function outputUpdate(vol) {
+    var output = document.querySelector('#volume');
+    output.value = vol + ' м2';
+    if(vol < 10){
+        output.style.left = vol*0.298/2 + 3.2 + 'rem';
+    }
+    else{
+        output.style.left = vol*0.298/2 + 2.5+ 'rem';
+    }
+}
+
+function outputUpdate1(vol) {
+    var output = document.querySelector('#volume1');
+    output.value = vol;
+    output.style.left = vol*3.2 + 1 + 'rem';
+    }
+
+function outputUpdate2(vol) {
+    var output = document.querySelector('#volume2');
+    output.value = vol;
+    output.style.left = vol*3.2 + 1 + 'rem';
+}
 </script>
 
 <template>
