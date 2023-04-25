@@ -1,6 +1,9 @@
 <script setup>
 import CalculatorBlockItem from './CalculatorBlockItem.vue'
 import ABtnBlock from '../ABtnBlock/ABtnBlock.vue'
+import line from '../../assets/line.png'
+import calc from '../../assets/calc.png'
+import icon from '../../assets/icon.png'
 </script>
 
 <template>
@@ -8,18 +11,18 @@ import ABtnBlock from '../ABtnBlock/ABtnBlock.vue'
             <div class="background_rectangle"></div>
 
             <div class="calculator">
-                <div class="container"><h2>Расчёт стоимости</h2><img class="calculator_picture" src="../../assets/calc.png" alt="" width="100px" height="100px"></div>
-                <CalculatorBlockItem />
-                <CalculatorBlockItem />
-                <CalculatorBlockItem />
+                <div class="container"><h2>Расчёт стоимости</h2><img class="calculator_picture" :src="calc" alt=""></div>
+                <CalculatorBlockItem text = "Площадь потолка" min = "01" max="200"/>
+                <CalculatorBlockItem text = "Количество углов" min = "01" max="10"/>
+                <CalculatorBlockItem text = "Количество светильников" min = "01" max="10"/>
                 <div class="price-main">
                     <p class="price-text">Цена для вас</p>
                     <div class="price">
-                        <img class="line" src="../../assets/line.png" alt="">
+                        <img class="line" :src="line" alt="">
                         <div class="price-value">19 577<span class="currency">₽</span></div>
                     </div>
                 </div>
-                <img class="icon-phone" src="../../assets/icon.png" alt="" >
+                <img class="icon-phone" :src="icon" alt="" >
                 <input class="phone-numbers" type="text" placeholder="Ваш номер телефона">
                 <ABtnBlock />
             </div>
@@ -28,15 +31,12 @@ import ABtnBlock from '../ABtnBlock/ABtnBlock.vue'
 
 <style scoped>
 /*общие настройки калькулятора*/
-
 .right-item {
     position: relative;
     display: flex;
     align-items: center;
     margin-top: -3.7rem;
-    left: -2rem;
 }
-
 .background_rectangle {
     position: absolute;
     background-color: white;
@@ -46,7 +46,6 @@ import ABtnBlock from '../ABtnBlock/ABtnBlock.vue'
     left: 2rem;
     top: 0;
 }
-
 .calculator {
     position: relative;
     background-color: white;
@@ -58,7 +57,6 @@ import ABtnBlock from '../ABtnBlock/ABtnBlock.vue'
     padding: 0.35rem 4.19rem;
     box-sizing: border-box
 }
-
 .container {
     display: flex;
     justify-content: space-between;
@@ -67,7 +65,6 @@ import ABtnBlock from '../ABtnBlock/ABtnBlock.vue'
     font-weight: bold;
     margin-bottom: 2.05rem;
 }
-
 .calculator_picture {
     width: 13rem;
     height: 13rem;
@@ -76,12 +73,12 @@ import ABtnBlock from '../ABtnBlock/ABtnBlock.vue'
     right: 1.7rem;
     transform: rotate(-7deg)
 }
-
 h2 {
     font-size: 1.96rem;
     width: min-content;
     white-space: nowrap;
 }
+
 /*цена*/
 .price-main {
     margin-top: -1.6rem;
@@ -92,7 +89,6 @@ h2 {
     vertical-align: middle;
     text-align: center;
 }
-
 .price-text {
     width: min-content;
     white-space: nowrap;
@@ -100,7 +96,6 @@ h2 {
     padding: 0.2rem 0;
     margin-right: 2rem;
 }
-
 .price-value {
     margin-left: 1.3rem;
     margin-top: 1.1rem;
@@ -108,7 +103,6 @@ h2 {
     font-size: 2.3rem;
     font-weight: 600;
 }
-
 .price {
     display: flex;
     width: min-content;
@@ -117,21 +111,18 @@ h2 {
     vertical-align: middle;
     text-align: center;
 }
-
 .currency {
     position: absolute;
     margin-left: -0.2rem;
     margin-top: 1.2rem;
     font-size: 1.6rem;
 }
-
 .line {
     position: absolute;
     margin-top: 0.49rem;
     margin-left: -0.2rem;
     width: 11.9rem;
 }
-
 
 /*ввод телефона*/
 .phone-numbers {
@@ -147,7 +138,6 @@ h2 {
     margin-bottom: 1.139rem;
 
 }
-
 .icon-phone {
     margin-top: 1.5rem;
     margin-left: 1.1rem;
@@ -155,5 +145,4 @@ h2 {
     width: 2.5rem;
 
 }
-
 </style>

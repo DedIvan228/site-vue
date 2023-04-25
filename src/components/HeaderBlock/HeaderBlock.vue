@@ -1,5 +1,5 @@
 <script setup>
-
+import WAIcon from '../../assets/whatsapp.jpg'
 </script>
 
 <template>
@@ -16,7 +16,7 @@
         <div class="header-contact">
             <div class="schedule">Пн-Вс. 8:00–22:00</div>
             <div class="contacts">
-                <img class="icon_wa" alt="Whatsapp" src="../../assets/whatsapp.jpg">
+                <img class="icon_wa" alt="Whatsapp" :src="WAIcon">
                 <p class="WA">Написать в WhatsApp</p>
             </div>
         </div>

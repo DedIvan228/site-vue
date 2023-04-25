@@ -1,5 +1,6 @@
 <script setup>
 import CalculatorBlock from '../CalculatorBlock/CalculatorBlock.vue'
+import lenta from '../../assets/lenta.png'
 </script>
 
 <template>
@@ -21,7 +22,7 @@ import CalculatorBlock from '../CalculatorBlock/CalculatorBlock.vue'
                 <p>Устанавливаем натяжные потолки с 2015 года. <b>Честность и качество</b> <br>— залог успеха нашей
                     работы!</p>
             </div>
-            <img src="../../assets/lenta.png" alt="" class = "picture_lenta">
+            <img :src="lenta" alt="" class = "picture_lenta">
         </div>
         <CalculatorBlock />
     </div>

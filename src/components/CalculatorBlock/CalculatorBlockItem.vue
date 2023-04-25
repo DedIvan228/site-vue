@@ -1,15 +1,22 @@
 <script setup>
+import { defineProps } from 'vue'
 
+const props = defineProps({
+    text: String,
+    min: Number,
+    max: Number,
+
+});
 </script>
 
 <template>
 <div class="slider-main">
-    <p class="slider-text">Площадь потолка</p>
+    <p class="slider-text">{{props.text}}</p>
     <div class="slider-active">
-        <input type="range" id="fader" class="range-first" min="1" max="200" value="1" step="1">
-        <output class="output" for="fader" id="volume">1 м2</output>
-        <p class="min">01</p>
-        <p class="max">200</p>
+        <input type="range" id="fader" class="range-first" :min="props.min" :max="props.max" value="1" step="1">
+        <output class="output" for="fader" id="volume">1</output>
+        <p class="min">{{props.min}}</p>
+        <p class="max">{{props.max}}</p>
     </div>
 </div>
 </template>
