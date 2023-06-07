@@ -1,38 +1,21 @@
 <script setup>
-import ARangeBlock from './ARange/ARangeBlock.vue'
 import { defineProps } from 'vue'
 
 const props = defineProps({
-    text: String,
     min: Number,
     max: Number,
 
 });
+input.focus = function(){
+}
 </script>
 
 <template>
-<div class="slider-main">
-    <p class="slider-text">{{props.text}}</p>
-    <div class="slider-active">
-        <ARangeBlock :min = "props.min" :max = "props.max"/>
-        <p class="min">{{props.min}}</p>
-        <p class="max">{{props.max}}</p>
-    </div>
-</div>
+<input type="range" id="fader" class="range-first" :min="props.min" :max="props.max" value="1" step="1">
+<output class="output" for="fader" id="volume">1</output>
 </template>
 
 <style scoped>
-.slider-main{
-    margin-bottom: 3.5rem;
-    width: 29.8rem;
-}
-.slider-text{
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    width: auto;
-    white-space: nowrap;
-}
 output{
     position: absolute;
     color:  #FEC338;
@@ -43,11 +26,6 @@ output{
 }
 #fader{
     width: 29.8rem;
-    height: 0.8rem;
-}
-.slider-active{
-    border-radius: 0.4rem;
-    width: 10rem;
     height: 0.8rem;
 }
 .min{
